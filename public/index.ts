@@ -2,6 +2,7 @@ import express, { Express } from "express";
 import BodyParser from "body-parser";
 import http from 'http';
 import Pusher from 'pusher-js';
+import PruebaRoute from '../routes/api/PruebaRoute';
 
 class MyServer {
 
@@ -16,7 +17,7 @@ class MyServer {
 
     //API ROUTES, se antepone el prefijo /api
     routes() {
-        /*     this._app.use('/api', OBJ_INSTANCE); */
+        this._app.use('/api', PruebaRoute);
     }
 
 

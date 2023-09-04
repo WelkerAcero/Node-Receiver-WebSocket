@@ -1,7 +1,6 @@
 import express, { Express } from "express";
 import BodyParser from "body-parser";
 import http from 'http';
-import Echo from 'laravel-echo';
 import Pusher from 'pusher-js';
 
 class MyServer {
@@ -28,7 +27,7 @@ class MyServer {
         });
     }
 
-    process() {
+    eventLister() {
         let app = [];
         const io = require('socket.io')(this._server);
         Pusher.logToConsole = true;
@@ -49,4 +48,4 @@ class MyServer {
 
 }
 
-new MyServer().process();
+new MyServer().eventLister();
